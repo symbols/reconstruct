@@ -385,10 +385,10 @@ class Range(Subconstruct):
                     pos = stream.tell()
                     obj.append(self.subcon._parse(stream, context))
                     c += 1
-        except ConstructError:
+        except ConstructError, ex:
             if c < self.mincount:
                 raise RangeError("expected %d to %d, found %d" % 
-                    (self.mincount, self.maxcout, c))
+                    (self.mincount, self.maxcout, c), ex)
             stream.seek(pos)
         return obj
     def _build(self, obj, stream, context):
@@ -405,10 +405,10 @@ class Range(Subconstruct):
                 for subobj in obj:
                     self.subcon._build(subobj, stream, context)
                     cnt += 1
-        except ConstructError:
+        except ConstructError, ex:
             if cnt < self.mincount:
                 raise RangeError("expected %d to %d, found %d" % 
-                    (self.mincount, self.maxcout, len(obj)))
+                    (self.mincount, self.maxcout, len(obj)), ex)
     def _sizeof(self, context):
         raise SizeofError("can't calculate size")
 
