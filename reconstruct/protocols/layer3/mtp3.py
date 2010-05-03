@@ -2,7 +2,7 @@
 Message Transport Part 3 (SS7 protocol stack)
 (untested)
 """
-from construct import *
+from reconstruct import *
 
 
 mtp3_header = BitStruct("mtp3_header",

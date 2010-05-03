@@ -1,9 +1,9 @@
 """
 Ethernet (TCP/IP protocol stack)
 """
-from construct import *
+from reconstruct import *
 from ethernet import MacAddressAdapter
-from construct.protocols.layer3.ipv4 import IpAddressAdapter
+from reconstruct.protocols.layer3.ipv4 import IpAddressAdapter
 
 
 

@@ -3,7 +3,7 @@ the Dynamic Host Configuration Protocol (DHCP) for IPv6
 
 http://www.networksorcery.com/enp/rfc/rfc3315.txt
 """
-from construct import *
+from reconstruct import *
 from ipv6 import Ipv6Address
 
 

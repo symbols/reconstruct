@@ -1,7 +1,7 @@
 """
 Internet Control Message Protocol for IPv4 (TCP/IP protocol stack)
 """
-from construct import *
+from reconstruct import *
 from ipv4 import IpAddress
 
 

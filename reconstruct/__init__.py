@@ -1,21 +1,21 @@
 """
-.   ####                                                               #### 
-   ##     ####  ##  ##  #### ###### #####  ##  ##  #### ######        ##  ##
-   ##    ##  ## ### ## ##      ##   ##  ## ##  ## ##      ##    ####      ##
-   ##    ##  ## ######  ###    ##   #####  ##  ## ##      ##            ##
-   ##    ##  ## ## ###    ##   ##   ##  ## ##  ## ##      ##          ##
-    ####  ####  ##  ## ####    ##   ##  ##  #####  ####   ##          ###### 
+ #####          ####                                                      
+ ##  ##  #####  ##     ####  ##  ##  #### ###### #####  ##  ##  #### ######
+ ##  ##  ##     ##    ##  ## ### ## ##      ##   ##  ## ##  ## ##      ##  
+ #####   ####   ##    ##  ## ######  ###    ##   #####  ##  ## ##      ##  
+ ## ##   ##     ##    ##  ## ## ###    ##   ##   ##  ## ##  ## ##      ##  
+ ##  ##  #####   ####  ####  ##  ## ####    ##   ##  ##  #####  ####   ##  
 
-                 Parsing made even more fun (and faster too)
+    Parsing made even more fun (and faster too)
 
 Homepage:
     http://construct.wikispaces.com (including online tutorial)
 
 Typical usage:
-    >>> from construct import *
+    >>> from reconstruct import *
 
 Hands-on example:
-    >>> from construct import *
+    >>> from reconstruct import *
     >>>
     >>> s = Struct("foo",
     ...     UBInt8("a"),
@@ -100,17 +100,3 @@ __all__ = [
     'ULInt32', 'ULInt64', 'ULInt8', 'UNInt16', 'UNInt32', 'UNInt64', 'UNInt8', 
     'Union', 'ValidationError', 'Validator', 'Value', "Magic",
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-

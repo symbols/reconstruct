@@ -4,7 +4,7 @@ Note: before parsing the application layer over a TCP stream, you must
 first combine all the TCP frames into a stream. See utils.tcpip for
 some solutions
 """
-from construct import *
+from reconstruct import *
 from layer2.ethernet import ethernet_header
 from layer3.ipv4 import ipv4_header
 from layer3.ipv6 import ipv6_header

@@ -1,7 +1,7 @@
 """
 Internet Protocol version 6 (TCP/IP protocol stack)
 """
-from construct import *
+from reconstruct import *
 from ipv4 import ProtocolEnum
 
 

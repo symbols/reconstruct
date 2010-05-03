@@ -1,5 +1,4 @@
-from construct.text import *
-
+from reconstruct.text import *
 
 ws = Whitespace(" \t\r\n")
 

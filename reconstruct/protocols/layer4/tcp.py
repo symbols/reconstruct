@@ -1,8 +1,7 @@
 """
 Transmission Control Protocol (TCP/IP protocol stack)
 """
-from construct import *
-
+from reconstruct import *
 
 tcp_header = Struct("tcp_header",
     UBInt16("source"),

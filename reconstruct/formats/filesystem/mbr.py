@@ -4,7 +4,7 @@ The first sector on disk, contains the partition table, bootloader, et al.
 
 http://www.win.tue.nl/~aeb/partitions/partition_types-1.html
 """
-from construct import *
+from reconstruct import *
 
 
 mbr = Struct("mbr",

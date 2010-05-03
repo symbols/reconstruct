@@ -1,8 +1,8 @@
 """
 Domain Name System (TCP/IP protocol stack)
 """
-from construct import *
-from construct.protocols.layer3.ipv4 import IpAddressAdapter
+from reconstruct import *
+from reconstruct.protocols.layer3.ipv4 import IpAddressAdapter
 
 
 class DnsStringAdapter(Adapter):

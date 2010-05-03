@@ -1,5 +1,4 @@
-from construct import *
-
+from reconstruct import *
 
 foo = Struct("foo",
     UBInt8("bar"),

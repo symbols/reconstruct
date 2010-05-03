@@ -1,7 +1,7 @@
 """
 Windows Meta File
 """
-from construct import *
+from reconstruct import *
 
 
 wmf_record = Struct("records",

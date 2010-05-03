@@ -5,8 +5,8 @@ Construct is not meant for text manipulation, and is probably not the right
 tool for the job, but I wanted to demonstrate how this could be done using
 the provided `text` module.
 """
-from construct import *
-from construct.text import *
+from reconstruct import *
+from reconstruct.text import *
 
 
 class HttpParamDictAdapter(Adapter):

@@ -1,6 +1,6 @@
 import sys
-from construct import *
-from construct.text import *
+from reconstruct import *
+from reconstruct.text import *
 
 
 # some tests require doing bad things...

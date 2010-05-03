@@ -1,7 +1,7 @@
 """
 Ethernet (TCP/IP protocol stack)
 """
-from construct import *
+from reconstruct import *
 
 
 class MacAddressAdapter(Adapter):

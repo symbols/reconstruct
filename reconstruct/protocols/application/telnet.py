@@ -3,8 +3,8 @@ Telnet (TCP/IP protocol stack)
 
 http://support.microsoft.com/kb/231866
 """
-from construct import *
-from construct.text import *
+from reconstruct import *
+from reconstruct.text import *
 
 
 command_code = Enum(Byte("code"),

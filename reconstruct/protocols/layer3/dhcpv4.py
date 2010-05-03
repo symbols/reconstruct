@@ -4,7 +4,7 @@ Dynamic Host Configuration Protocol for IPv4
 http://www.networksorcery.com/enp/protocol/dhcp.htm
 http://www.networksorcery.com/enp/protocol/bootp/options.htm
 """
-from construct import *
+from reconstruct import *
 from ipv4 import IpAddress
 
 

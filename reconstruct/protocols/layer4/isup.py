@@ -1,7 +1,7 @@
 """
 ISDN User Part (SS7 protocol stack)
 """
-from construct import *
+from reconstruct import *
 
 
 isup_header = Struct("isup_header",

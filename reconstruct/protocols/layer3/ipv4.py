@@ -1,7 +1,7 @@
 """
 Internet Protocol version 4 (TCP/IP protocol stack)
 """
-from construct import *
+from reconstruct import *
 
 
 class IpAddressAdapter(Adapter):

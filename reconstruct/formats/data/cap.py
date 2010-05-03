@@ -1,7 +1,7 @@
 """
 tcpdump capture file
 """
-from construct import *
+from reconstruct import *
 import time
 from datetime import datetime
 

@@ -1,9 +1,9 @@
 """
 common constructs for typical programming languages (numbers, strings, ...)
 """
-from construct.core import *
-from construct.adapters import *
-from construct.macros import *
+from reconstruct.core import *
+from reconstruct.adapters import *
+from reconstruct.macros import *
 
 
 #===============================================================================

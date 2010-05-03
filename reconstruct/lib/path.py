@@ -27,7 +27,7 @@ def drill(obj, root = "", levels = -1):
 
 
 if __name__ == "__main__":
-    from construct import *
+    from reconstruct import *
     
     c = Struct("foo",
         Byte("a"),

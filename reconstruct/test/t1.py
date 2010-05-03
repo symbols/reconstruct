@@ -1,5 +1,4 @@
-from construct import *
-
+from reconstruct import *
 
 s = Aligned(
     Struct('test',

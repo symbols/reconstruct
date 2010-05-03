@@ -1,8 +1,7 @@
 """
 User Datagram Protocol (TCP/IP protocol stack)
 """
-from construct import *
-
+from reconstruct import *
 
 udp_header = Struct("udp_header",
     Value("header_length", lambda ctx: 8),

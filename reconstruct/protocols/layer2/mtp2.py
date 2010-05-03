@@ -2,7 +2,7 @@
 Message Transport Part 2 (SS7 protocol stack)
 (untested)
 """
-from construct import *
+from reconstruct import *
 
 
 mtp2_header = BitStruct("mtp2_header",

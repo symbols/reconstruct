@@ -1,7 +1,7 @@
 """
 Enhanced Meta File
 """
-from construct import *
+from reconstruct import *
 
 
 record_type = Enum(ULInt32("record_type"),

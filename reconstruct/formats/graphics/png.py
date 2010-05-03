@@ -6,7 +6,7 @@ Original code contributed by Robin Munn (rmunn at pobox dot com)
 (although the code has been extensively reorganized to meet Construct's
 coding conventions)
 """
-from construct import *
+from reconstruct import *
 
 
 #===============================================================================
