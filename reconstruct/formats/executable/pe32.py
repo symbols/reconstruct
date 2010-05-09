@@ -265,7 +265,7 @@ optional_header = Struct("optional_header",
         EFI_RUNTIME_DRIVER = 12,
         EFI_ROM = 13,
         XBOX = 14,
-        _defualt_ = Pass
+        _default_ = Pass
     ),
     FlagsEnum(ULInt16("dll_characteristics"),
         NO_BIND = 0x0800,
@@ -384,6 +384,11 @@ section = Struct("section",
     ),
 )
 
+def extra_data_length(ctx):
+    start_p = ctx['_end_of_section_defs']
+    section_p = min(s.raw_data_pointer for s in ctx['section'])
+    return section_p - start_p
+
 pe32_file = Struct("pe32_file",
     # headers
     msdos_header,
@@ -399,9 +404,10 @@ pe32_file = Struct("pe32_file",
     ),
     
     # sections
-    Array(lambda ctx: ctx.coff_header.number_of_sections, section)   
+    Array(lambda ctx: ctx.coff_header.number_of_sections, section),
+    Anchor("_end_of_section_defs"),
+    MetaField('extra_data', extra_data_length)
 )
-
 
 if __name__ == "__main__":
     print pe32_file.parse_stream(open("../../test/notepad.exe", "rb"))

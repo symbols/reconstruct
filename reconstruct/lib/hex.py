@@ -15,22 +15,25 @@ def hexdump(data, linesize = 16):
         prettylines.append(fmt % (i, hextext, rawtext))
     return prettylines
 
-class HexString(str):
+class HexString(object):
     """
     represents a string that will be hex-dumped (only via __pretty_str__).
-    this class derives of str, and behaves just like a normal string in all
-    other contexts.
     """
     def __init__(self, data, linesize = 16):
-        str.__init__(self, data)
-        self.linesize = linesize
-    def __new__(cls, data, *args, **kwargs):
-        return str.__new__(cls, data)
+        self._data = data
+        self._linesize = linesize
+    
+    def __len__(self):
+        return len(self._data)
+
     def __pretty_str__(self, nesting = 1, indentation = "    "):
-        if not self:
+        if not self._data:
             return "''"
         sep = "\n" + indentation * nesting
-        return sep + sep.join(hexdump(self))
+        return sep + sep.join(hexdump(self._data))
+
+    def __str__(self):
+        return self._data
 
 
 
