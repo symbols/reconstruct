@@ -12,6 +12,12 @@ def recursion_lock(retval, lock_name = "__recursion_lock__"):
         return wrapper
     return decorator
 
+def coerceattr(val, indent=0, indent_str=''):
+    if hasattr(val, 'niftyrepr'):
+        return val.niftyrepr(indent+1, indent_str)
+    else:
+        return repr(val)
+
 class Container(object):
     """
     A generic container of attributes
@@ -57,6 +63,17 @@ class Container(object):
         for name in self.__attrs__:
             yield name, self.__dict__[name]
     
+    def niftyrepr(self, indent=0, indent_str=' '):
+        attrs = sorted('%s = %s' % (k, coerceattr(v, indent, indent_str))
+            for k,v in self.__dict__.iteritems()
+            if not k.startswith('_'))
+        full_str = (indent_str * indent)
+        join_str = ',\n' + full_str
+        return '%s(%s%s)' % (
+            self.__class__.__name__, 
+            '\n'+full_str, 
+            join_str.join(attrs))
+
     @recursion_lock("<...>")
     def __repr__(self):
         attrs = sorted("%s = %s" % (k, repr(v))
@@ -119,6 +136,16 @@ class ListContainer(list):
     __slots__ = ["__recursion_lock__"]
     def __str__(self):
         return self.__pretty_str__()
+
+    def niftyrepr(self, indent=0, indent_str=' '):
+        attrs = ('%s' % coerceattr(v, indent, indent_str) for v in self)
+        full_str = (indent_str * indent)
+        join_str = ',\n' + full_str
+        return '%s([%s%s])' % (
+            self.__class__.__name__, 
+            '\n'+full_str, 
+            join_str.join(attrs))
+
     @recursion_lock("[...]")
     def __pretty_str__(self, nesting = 1, indentation = "    "):
         if not self:
@@ -201,6 +228,9 @@ class LazyContainer(object):
         self.pos = pos
         self.context = context
         self._value = NotImplemented
+    def niftyrepr(self, indent = 0, indent_str = ' '):
+        return coerceattr(self.value, indent+1, indent_str)
+
     def __eq__(self, other):
         try:
             return self._value == other._value
